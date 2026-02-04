@@ -19,7 +19,7 @@ type TodoHandler struct {
 func (ts *TodoHandler) CreateTodo(t Todo) ([]Todo, error) {
 	// Check if title or description is empty
 	if t.Title == "" || t.Description == "" {
-		return nil, errors.New("title or description must not be empty")
+		return nil, errors.New("title or description must not be empty!!")
 	}
 
 	// Add id (simulation)

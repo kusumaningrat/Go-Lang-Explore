@@ -35,3 +35,28 @@ func (ts *TodoHandler) CreateTodo(t Todo) ([]Todo, error) {
 func (ts *TodoHandler) GetAllTodos() ([]Todo, error) {
 	return ts.todos, nil
 }
+
+func (ts *TodoHandler) GetTodoByStatus(completed bool) ([]*Todo, error) {
+	// Create new filtered data
+	var results []*Todo
+
+	// loop through todos list
+	for i := range ts.todos {
+		if completed == ts.todos[i].Completed {
+			results = append(results, &ts.todos[i])
+		}
+	}
+
+	return results, nil
+}
+
+func (ts *TodoHandler) GetTodoByID(todoId int) (*Todo, error) {
+	// loop through todos list
+	for i := range ts.todos {
+		if todoId == ts.todos[i].ID {
+			return &ts.todos[i], nil
+		}
+	}
+
+	return nil, nil
+}

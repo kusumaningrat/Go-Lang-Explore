@@ -46,6 +46,7 @@ func main() {
 
 	todo3, err := todoHandler.CreateTodo(
 		handlers.Todo{
+			Title:       "Golang Gin Framework",
 			Description: "Basic backend development on Golang with Gin Framework",
 			Completed:   true,
 		},
@@ -70,4 +71,26 @@ func main() {
 
 	todosResult := utils.FormattedResponse("Todos loaded successfully", allTodos)
 	fmt.Println(utils.PrettyJson(todosResult))
+
+	fmt.Println()
+
+	// Get todo by status
+	fmt.Println("====== Get Todo By Status =====")
+	getOneTodo, err := todoHandler.GetTodoByStatus(true)
+	if err != nil {
+		fmt.Println("Error while listing all todos", err)
+	}
+
+	getOneTodoResult := utils.FormattedResponse("Todos loaded successfully", getOneTodo)
+	fmt.Println(utils.PrettyJson(getOneTodoResult))
+
+	// Get todo by id
+	fmt.Println("====== Get Todo By ID =====")
+	getOneTodoById, err := todoHandler.GetTodoByID(1)
+	if err != nil {
+		fmt.Println("Error while listing all todos", err)
+	}
+
+	getOneTodoByIdResult := utils.FormattedResponse("Todos loaded successfully", getOneTodoById)
+	fmt.Println(utils.PrettyJson(getOneTodoByIdResult))
 }

@@ -55,7 +55,7 @@ Response
 ```
 - GetAll() ->
   {
-    "message": "Users loaded successfully",
+    "message": "Todos loaded successfully",
     "data": [
         {
             "id": 1,
@@ -87,7 +87,7 @@ Response
 ```
 - GetOne(id) ->
     {
-        "message": "User loaded successfully",
+        "message": "Todo loaded successfully",
         "data": {
             "id": 1,
             "title": "Todo1",
@@ -118,7 +118,7 @@ Response
 
 ```
 {
-    "message": "User updated successfully",
+    "message": "Todo updated successfully",
     "data": {
         "id": 1,
         "title": "Todo1 Update",
@@ -142,8 +142,7 @@ Response
 
 - Delete(id) ->
 {
-    "message": "User deleted successfully",
-    "data": null
+    "message": "Todo deleted successfully",
 }
 
 ```
